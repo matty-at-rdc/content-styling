@@ -1,0 +1,102 @@
+/* @link https://utopia.fyi/type/calculator?c=320,18,1.25,1240,18,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  /*  Proper Default */
+  /* --color-dark: #252525; */
+  /* --color-light: #efefef; */
+  --color-dark: #252525;
+  --color-light: #efefef;
+  --color-primary: #1a8fe3;
+  --size-step-0: clamp(1rem, calc(0.96rem + 0.22vw), 1.13rem);
+  --size-step-1: clamp(1.25rem, calc(1.16rem + 0.43vw), 1.5rem);
+  --size-step-2: clamp(1.56rem, calc(1.41rem + 0.76vw), 2rem);
+  --size-step-3: clamp(1.95rem, calc(1.71rem + 1.24vw), 2.66rem);
+  --size-step-4: clamp(2.44rem, calc(2.05rem + 1.93vw), 3.55rem);
+}
+
+body {
+  background: var(--color-light);
+  color: var(--color-dark);
+  padding: 2em;
+  font-family: Georgia, serif;
+  font-size: var(--size-step-0);
+  line-height: 1.7;
+}
+
+/* WARNING */
+/* Not universal as the original demo article for this tutorial is ALL wrapp in a single `article` tag */
+article {
+  max-width: 65ch;
+  margin-inline: auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Inter, sans-serif;
+  font-weight: 800;
+  line-height: 1.1;
+    /* Progressive Enhancement -- Canary Only */
+    text-wrap: balance;
+}
+
+h1 {
+  max-width: 20ch;
+}
+
+h2,
+h3 {
+  max-width: 28ch;
+}
+
+h1 {
+  font-size: var(--size-step-4);
+}
+
+h2 {
+  font-size: var(--size-step-3);
+}
+
+h3 {
+  font-size: var(--size-step-2);
+}
+
+ul,
+ol {
+  padding-inline-start: 1em;
+}
+
+a {
+  color: currentColor;
+  text-decoration-color: var(--color-primary);
+  text-decoration-thickness: 0.3ex;
+  text-underline-offset: 0.3ex;
+}
+
+blockquote {
+  max-width: 50ch;
+}
+
+blockquote {
+  padding-inline-start: 1em;
+  border-inline-start: 0.3em solid;
+  font-style: italic;
+  font-size: var(--size-step-1);
+}
+
+/* Magic: https://andy-bell.co.uk/my-favourite-3-lines-of-css/ */
+.flow > * + * {
+  margin-block-start: var(--flow-space, 1em);
+}
+
+.lede {
+  font-size: var(--size-step-1);
+  font-style: italic;
+  max-width: 50ch;
+  /* Progressive Enhancement -- Canary Only */
+  text-wrap: balance;
+}
+
+.lede + * {
+  --flow-space: 2em;
+}
