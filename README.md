@@ -32,3 +32,17 @@ To do this I'm using:
     - See: https://typescale.com/
 - Apply type scales to body, heading, and blockquote elements
 - Keep it going...
+
+## Deployment
+
+- Deployed through `flyctl` using Docker which is medium lame...
+- If you are interested in building it locally do this
+    - `docker build -t content-styling . && docker run -p 8043:8043 content-styling`
+- Otherwise init the project 
+    - `flyctl launch`
+- Modify the _fly.toml_ to properly map the port
+    - `internal_port = 8043`
+- Deploy the app
+    - `flyctl deploy`
+- View the app
+    - `flyctl open`
